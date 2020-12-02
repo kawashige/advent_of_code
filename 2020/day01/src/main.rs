@@ -51,8 +51,7 @@ use std::io::Read;
 fn main() {
     let mut buf = String::new();
     std::io::stdin().read_to_string(&mut buf).unwrap();
-    let mut iter = buf.split_whitespace();
-    let _n: usize = iter.next().unwrap().parse().unwrap();
+    let iter = buf.split_whitespace();
     let nums = iter.map(|i| i.parse::<i32>().unwrap()).collect::<Vec<_>>();
     println!("Part1: {}", Solution::solve(nums.clone()));
     println!("Part2: {}", Solution::solve2(nums));
