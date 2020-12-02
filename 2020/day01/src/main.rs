@@ -1,5 +1,4 @@
-struct Solution {
-}
+struct Solution {}
 
 impl Solution {
     fn solve(nums: Vec<i32>) -> i32 {
@@ -63,7 +62,13 @@ mod test {
 
     #[test]
     fn test_day01() {
-        assert_eq!(1721 * 299, Solution::solve(vec![1721, 979, 366, 299, 675, 1456]));
-        assert_eq!(979 * 366 * 675, Solution::solve2(vec![1721, 979, 366, 299, 675, 1456]));
+        assert_eq!(
+            1721 * 299,
+            Solution::solve(vec![1721, 979, 366, 299, 675, 1456])
+        );
+        assert_eq!(
+            979 * 366 * 675,
+            Solution::solve2(vec![1721, 979, 366, 299, 675, 1456])
+        );
     }
 }
