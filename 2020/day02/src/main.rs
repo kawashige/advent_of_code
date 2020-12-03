@@ -23,7 +23,8 @@ impl Solution {
             .iter()
             .filter(|i| {
                 let chars = i.password.chars().collect::<Vec<char>>();
-                (chars[i.p1 - 1] == i.c || chars[i.p2 - 1] == i.c) && chars[i.p1 - 1] != chars[i.p2 - 1]
+                (chars[i.p1 - 1] == i.c || chars[i.p2 - 1] == i.c)
+                    && chars[i.p1 - 1] != chars[i.p2 - 1]
             })
             .count()
     }
