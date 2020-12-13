@@ -15,24 +15,16 @@ impl Solution {
     }
 
     fn solve2(ids: &Vec<i32>) -> i64 {
-        let mut inits = vec![ids[0] as i64];
-        let mut diffs = vec![0];
-        let mut diff = 1;
+        let mut t = ids[0] as i64;
+        let mut step = ids[0] as i64;
         for i in 1..ids.len() {
-            if ids[i] != 0 {
-                inits.push(ids[i] as i64);
-                diffs.push(diff);
+            if ids[i] == 0 {
+                continue;
             }
-            diff += 1;
-        }
-
-        let mut t = inits[0];
-        let mut step = inits[0];
-        for i in 1..inits.len() {
-            while (t + diffs[i]) % inits[i] != 0 {
+            while (t + i as i64) % ids[i] as i64 != 0 {
                 t += step;
             }
-            step *= inits[i];
+            step *= ids[i] as i64;
         }
         t
     }
