@@ -1,0 +1,5 @@
+4
+BCBD
+DCBA
+DBAC
+ADCA
